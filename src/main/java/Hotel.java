@@ -63,6 +63,7 @@ public class Hotel {
             throw new WrongStatusException("Room must be vacant!");
         }
         room.setStatus(RoomStatus.Available);
+        this.availableRoomIndexes.add(roomIndex);
     }
 
     public void markRoomRepair(String name) throws InvalidRoomException, WrongStatusException {
