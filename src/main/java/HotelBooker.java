@@ -1,13 +1,9 @@
-import java.util.stream.DoubleStream;
+import java.util.ArrayList;
 
 public class HotelBooker {
-    static double add(double... operands) {
-        return DoubleStream.of(operands)
-            .sum();
-    }
+    Hotel hotel = new Hotel();
 
-    static double multiply(double... operands) {
-        return DoubleStream.of(operands)
-            .reduce(1, (a, b) -> a * b);
+    public void assignRoom() throws WrongStatusException{
+        throw new WrongStatusException("Room is not available!");
     }
 }
