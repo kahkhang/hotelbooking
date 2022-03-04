@@ -1,12 +1,12 @@
 import java.util.*;
 
 public class Hotel {
-    private List<RoomStatus> roomStatuses = new ArrayList<>();
-    private List<String> roomNames = new ArrayList<>();
-    private Map<String, Integer> roomNameToIndexMap = new HashMap<>();
-    PriorityQueue<Integer> availableRooms = new PriorityQueue<Integer>();
+    private final List<Room> rooms = new ArrayList<>();
+    private final Map<String, Integer> roomNameToIndexMap = new HashMap<>();
+    private final PriorityQueue<Integer> availableRoomIndexes = new PriorityQueue<Integer>();
 
     public Hotel() {
+        List<String> roomNames = new ArrayList<>();
         char[] alphabet = "ABCDE".toCharArray();
         for(int i = 0; i < 5; i++) {
             roomNames.add("1" + alphabet[i]);
@@ -21,9 +21,9 @@ public class Hotel {
             roomNames.add("4" + alphabet[i]);
         }
         for(int i = 0; i < roomNames.size(); i++) {
-            roomStatuses.add(RoomStatus.Available);
+            rooms.add(new Room(roomNames.get(i), RoomStatus.Available));
             roomNameToIndexMap.put(roomNames.get(i), i);
-            availableRooms.add(i);
+            availableRoomIndexes.add(i);
         }
     }
 
@@ -32,5 +32,54 @@ public class Hotel {
             throw new InvalidRoomException("Invalid room " + name);
         }
         return roomNameToIndexMap.get(name);
+    }
+
+    public RoomStatus getStatus(String name) throws InvalidRoomException {
+        return this.rooms.get(this.getRoomIndexFromName(name)).getStatus();
+    }
+
+    public String requestForRoomAssignment() throws NoRoomException {
+        if (availableRoomIndexes.isEmpty()) {
+            throw new NoRoomException("No available rooms!");
+        }
+        Integer roomIndex = availableRoomIndexes.poll();
+        rooms.get(roomIndex).setStatus(RoomStatus.Occupied);
+        return this.rooms.get(roomIndex).getName();
+    }
+
+    public void checkOutOfRoom(String name) throws InvalidRoomException, WrongStatusException {
+        Integer roomIndex = this.getRoomIndexFromName(name);
+        Room room = this.rooms.get(roomIndex);
+        if (room.getStatus() != RoomStatus.Occupied) {
+            throw new WrongStatusException("Room must be occupied!");
+        }
+        room.setStatus(RoomStatus.Vacant);
+    }
+
+    public void markRoomCleaned(String name) throws InvalidRoomException, WrongStatusException {
+        Integer roomIndex = this.getRoomIndexFromName(name);
+        Room room = this.rooms.get(roomIndex);
+        if (room.getStatus() != RoomStatus.Vacant) {
+            throw new WrongStatusException("Room must be vacant!");
+        }
+        room.setStatus(RoomStatus.Available);
+    }
+
+    public void markRoomRepair(String name) throws InvalidRoomException, WrongStatusException {
+        Integer roomIndex = this.getRoomIndexFromName(name);
+        Room room = this.rooms.get(roomIndex);
+        if (room.getStatus() != RoomStatus.Vacant) {
+            throw new WrongStatusException("Room must be vacant!");
+        }
+        room.setStatus(RoomStatus.Repair);
+    }
+
+    public void repairRoom(String name) throws InvalidRoomException, WrongStatusException {
+        Integer roomIndex = this.getRoomIndexFromName(name);
+        Room room = this.rooms.get(roomIndex);
+        if (room.getStatus() != RoomStatus.Repair) {
+            throw new WrongStatusException("Room must be marked as repair!");
+        }
+        room.setStatus(RoomStatus.Vacant);
     }
 }

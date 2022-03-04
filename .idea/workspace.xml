@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3817ea8a-54ad-4114-8955-e8a891ffd7d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hotel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InvalidRoomException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/RoomStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WrongStatusException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelBooker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelBooker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HotelBookerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HotelBookerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/NoRoomException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HotelBooker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HotelBookerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HotelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646392960626</updated>
-      <workItem from="1646392962049" duration="2769000" />
+      <workItem from="1646392962049" duration="5024000" />
     </task>
     <servers />
   </component>
@@ -79,10 +79,10 @@
       <screen x="0" y="25" width="1440" height="818" />
     </state>
     <state x="208" y="25" width="1024" height="818" key="#Project_Structure/0.25.1440.818@0.25.1440.818" timestamp="1646392978235" />
-    <state x="184" y="102" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646392994027">
+    <state x="184" y="102" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646399824512">
       <screen x="0" y="25" width="1440" height="818" />
     </state>
-    <state x="184" y="102" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.818@0.25.1440.818" timestamp="1646392994027" />
+    <state x="184" y="102" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.818@0.25.1440.818" timestamp="1646399824512" />
     <state x="533" y="163" key="#com.intellij.ide.util.MemberChooser" timestamp="1646395264295">
       <screen x="0" y="25" width="1440" height="818" />
     </state>
@@ -91,10 +91,10 @@
       <screen x="0" y="25" width="1440" height="818" />
     </state>
     <state x="258" y="102" key="Maven.ArtifactSearchDialog/0.25.1440.818@0.25.1440.818" timestamp="1646393172247" />
-    <state x="499" y="257" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1646393300471">
+    <state x="499" y="257" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1646400302598">
       <screen x="0" y="25" width="1440" height="818" />
     </state>
-    <state x="499" y="257" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.25.1440.818@0.25.1440.818" timestamp="1646393300471" />
+    <state x="499" y="257" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.25.1440.818@0.25.1440.818" timestamp="1646400302598" />
     <state x="385" y="167" width="670" height="676" key="search.everywhere.popup" timestamp="1646395776614">
       <screen x="0" y="25" width="1440" height="818" />
     </state>
